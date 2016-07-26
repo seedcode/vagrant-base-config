@@ -14,83 +14,26 @@ https://www.virtualbox.org/wiki/Downloads
 **Vagrant:**
 https://www.vagrantup.com/downloads.html
 
-**SourceTree:**
-https://www.sourcetreeapp.com
-
-**git:**
-http://git-scm.com/download/mac
-
-**nodeJS (stable version is preferred):**
-https://nodejs.org/en/
-
-Configuration and cleanup using the terminal
+Configuration and operation
 ------------
-**Launch Terminal app:**
-Switch default theme and new window theme to “Homebrew” in preferences (so you can be cool)
+**Configuring vagrant:**
+Copy the vagrant folder to the root directory of your project, then open the file "Vagrantfile" in that newly copied folder to modify the config.
 
-**Create a global git ignore file:**
-```shell
-git config --global core.excludesfile ~/.gitignore_global
-touch ~/.gitignore_global
-nano ~/.gitignore_global
-```
+ 1. Edit the setting "config.vm.hostname" to a host name that makes sense for your project. This is an arbitrary host name that you can use instead of an ip address.
 
-Then paste the following:
-```
-## Begin ignore list ##
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+ 2. Edit the setting "vb.name" to a name unique to this project.
 
-# Vagrant generated files #
-######################
-.vagrant
-## End ignore list ##
-```
+ 3. Save changes and exit the file.
 
-press "ctl" + "x" to exit, then “y” to save and "enter" to confirm.
+ **Launch Terminal app:**
+ The following are all terminal shell commands
 
-**Add user email and name to git config file:**
-```shell
-nano ~/.gitconfig
-```
-
-Fill in name and email. When done "ctrl" + "x" to exit, then “y” to save and "enter" to confirm.
-
-**Enable ssh connections for kiln:**
-```shell
-ssh-keygen -t rsa
-```
-
-At the prompt do not enter anything for file and password, just press "enter"
-
-```shell
-cat ~/.ssh/id_rsa.pub
-```
-
-Copy the output to the clipboard starting with "ssh-rsa".
-
-Now navigate to kiln, click your profile and add the ssh key.
-Read more here: http://help.fogcreek.com/8153/using-kiln-with-ssh
-
-**Fix npm permissions:**
-```shell
-sudo chown -R `whoami` ~/.npm
-sudo chown -R `whoami` /usr/local/lib/node_modules
-```
-
-**Vagrant plugins:**
-```shell
-vagrant plugin install vagrant-ghost
-vagrant plugin install vagrant-vbguest
-vagrant plugin install vagrant-fsnotify
-```
+ **Vagrant plugins:**
+ ```shell
+ vagrant plugin install vagrant-ghost
+ vagrant plugin install vagrant-vbguest
+ vagrant plugin install vagrant-fsnotify
+ ```
 
 **How to start vagrant:**
 
