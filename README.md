@@ -1,5 +1,5 @@
 # vagrant-base-config
-Starting point for working with vagrant boxes. Inlcudes nodejs, nginx, php5, git, and CLI for CenturyLink cloud.
+Starting point for working with vagrant boxes. This is what we use for developing [DayBack](https://appexchange.salesforce.com/listingDetail?listingId=a0N30000000qp64EAA). Inlcudes nodejs, nginx, php5, git, and CLI for CenturyLink cloud.
 
 
 Core Dev Software
