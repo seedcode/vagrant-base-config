@@ -19,20 +19,23 @@ Configuration and operation
 **Configuring vagrant:**
 Copy the vagrant folder to the root directory of your project, then open the file "Vagrantfile" in that newly copied folder to modify the config.
 
- 1. Edit the setting "config.vm.hostname" to a host name that makes sense for your project. This is an arbitrary host name that you can use instead of an ip address.
+ 1. Change the Host ports in the config.vm.network "forwarded_port" setting if the ports might conflict with something else.
 
- 2. Edit the setting "vb.name" to a name unique to this project.
+ 2. Change the IP address in the config.vm.network "private_network" setting to something that no other vagrant file is using. If this is the first instance you can leave as is.
 
- 3. Save changes and exit the file.
+ 3. Edit the setting "config.vm.hostname" to a host name that makes sense for your project. This is an arbitrary host name that you can use instead of an ip address.
+
+ 4. Edit the setting "vb.name" to a name unique to this project.
+
+ 5. Save changes and exit the file.
 
  **Launch Terminal app:**
  The following are all terminal shell commands
 
  **Vagrant plugins:**
  ```shell
- vagrant plugin install vagrant-ghost
+ vagrant plugin install vagrant-hostsupdater
  vagrant plugin install vagrant-vbguest
- vagrant plugin install vagrant-fsnotify
  ```
 
 **How to start vagrant:**
@@ -48,6 +51,7 @@ If you need to activate SSL for the development environment run the following co
 ```shell
 vagrant ssh
 cd /vagrant
+npm install
 grunt ssl:YourEmail:YourDomain
 ```
 
@@ -74,3 +78,8 @@ sync-settings
 Themes:
 Ui: One Dark
 syntax: afterglow-monokai-syntax
+
+Additional Info & Links
+========================
+Vagrant Plugin List:
+https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins

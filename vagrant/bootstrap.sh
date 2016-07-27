@@ -9,9 +9,6 @@ echo "Installing web server software..."
 # Install nginx
 apt-get install -qy nginx php5 php5-fpm php5-gd php5-cgi php5-cli php5-curl
 
-# Install PHP and dependencies
-apt-get install -qy php5 php5-fpm php5-gd php5-cgi php5-cli php5-curl
-
 # Install dependencies and other dev libraries
 apt-get install -qy build-essential curl git libssl-dev ruby1.9.3
 
@@ -22,7 +19,9 @@ mv cf /usr/local/bin
 
 echo "Installing let's encrypt ssl library..."
 #Install let's encrypt so we can use free ssl: https://letsencrypt.readthedocs.org/en/latest/
-git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
+cd /opt
+wget https://dl.eff.org/certbot-auto
+chmod a+x ./certbot-auto
 
 echo "Moving nginx config files into place…"
 rm /etc/nginx/sites-enabled/default

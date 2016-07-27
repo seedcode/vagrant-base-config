@@ -11,15 +11,3 @@ nvm alias default stable
 
 # Install grunt command line tool - http://gruntjs.com
 npm install -g grunt-cli
-
-# Install browser-sync - https://www.browsersync.io
-npm install -g browser-sync
-
-# Install mocha unit test framework - ttps://mochajs.org
-npm install -g mocha
-
-# Install chai assertian library for testing in mocha - http://chaijs.com
-npm install -g chai
-
-# Install nodemon - https://github.com/remy/nodemon
-npm install -g nodemon
